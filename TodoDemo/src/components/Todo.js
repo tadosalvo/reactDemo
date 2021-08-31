@@ -5,7 +5,7 @@ import Modal from './Modal';
 import Backdrop from './Backdrop';
 
 function Todo(props) {
-    const [ showModal, setModal] =useState(false);
+    const [ showModal, setModal] = useState(false);
 
     function deleteHandler() {
         setModal(true);
@@ -21,7 +21,7 @@ function Todo(props) {
             <button className = 'btn' onClick = {deleteHandler}>Delete</button>
         </div>
         {showModal && <Modal onCancel = {closeModalHandler} onConfirm = {closeModalHandler}/>}
-        {showModal && <Backdrop onClick = {closeModalHandler}/>}
+        {showModal && <Backdrop onClose = {closeModalHandler}/>}
     </div>
     // {showModal ? <Modal /> : null}
 }
